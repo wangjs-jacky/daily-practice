@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    /* 思考两者有什么差别？高度不一样 */
+    height: 100vh;
+    display: flex;
+    /* 居中对齐 */
+    justify-content: center;
+    /* 垂直对齐 */
+    align-items: center;
+    background-color: #efeeee;
+}
+.container {
+    /* 整个容器的大小 */
+    width: 700px; /* 140*5=700*/
+    height: 600px;
+    /* background-color: gold; */
+    display: flex;
+    /* flex-wrap默认：不换行 */
+
+    /* 这里设置提前设置子元素的一些特性 */
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.container .box {
+    /* 小盒子的长宽 加上margin 140*140 */
+    width: 100px;
+    height: 140px;
+    margin: 20px;
+    display: flex;
+
+    /* 设置小盒子内部的元素：图片+文字 */
+    /* flex: 0 0 25%; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .box .img {
+    /* 存放图片的盒子 */
+    width: 100px;
+    height: 100px;
+    box-shadow: 18px 18px 30px rgba(0, 0, 0, 0.1), -18px -18px 30px rgba(255, 255, 255, 1);
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #efeeee;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.container .box .img img {
+    /* 图片设置 */
+    width: 60px;
+    transition: width 0.2s ease-out;
+}
+
+.container .box p {
+    color: slategrey;
+}
+.container .box .img:hover {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px rgba(255, 255, 255, 0.8),
+        inset 18px 18px 30px rgba(0, 0, 0, 0.1), inset -18px -18px 30px rgba(255, 255, 255, 1);
+    transition: box-shadow 0.2s ease-out;
+}
+
+.container .box .img:hover img {
+    width: 58px;
+    /* 很细微的变化，图标就变化了2个px */
+    transition: width 0.2s ease-out;
+}
